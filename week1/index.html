@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Array Methods Practice</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 30px;
+      }
+      h1 {
+        color: #1e90ff;
+      }
+      pre {
+        background: #f4f4f4;
+        padding: 10px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JavaScript Array Methods Practice</h1>
+
+    <p>This page shows examples of array methods with results printed below:</p>
+
+    <div id="output"></div>
+
+    <h2>My Task List</h2>
+    <input type="text" id="taskInput" placeholder="Enter a new task" />
+    <button onclick="addTask()">Add Task</button>
+    <button onclick="findUrgent()">Find First "Urgent"</button>
+    <p id="message"></p>
+    <ul id="taskList"></ul>
+
+    <script>
+      const outputDiv = document.getElementById("output");
+
+      function writeLine(text) {
+        const p = document.createElement("p");
+        p.textContent = text;
+        outputDiv.appendChild(p);
+      }
+
+      // 1. Example Array
+      const numbers = [1, 2, 3, 4, 5];
+      writeLine("Original array: " + numbers);
+
+      // 2. forEach -> loops through items
+      writeLine("forEach:");
+      numbers.forEach((num) => writeLine("  " + num * 2));
+
+      // 3. map -> makes a new array with changes
+      const doubled = numbers.map((num) => num * 2);
+      writeLine("doubled array using map : " + doubled);
+
+      // 4. filter -> keeps only items that match test
+      const evenNums = numbers.filter((num) => num % 2 === 0);
+      writeLine("even numbers using filter: " + evenNums);
+
+      // 5. find -> finds the first item matching test
+      const firstBig = numbers.find((num) => num > 3);
+      writeLine("Getting first number greater than 3 using Find: " + firstBig);
+
+      // 6. reduce -> combines all items into one value
+      const total = numbers.reduce((sum, num) => sum + num, 0);
+      writeLine("reduce -> sum of array: " + total);
+
+      // 7. Show array text formatting
+      writeLine("Final arrays:");
+      writeLine("  doubled: " + doubled);
+      writeLine("  evens: " + evens);
+
+      let tasks = ["Learn JavaScript", "Review ES6", "Build a project"];
+
+      function renderTasks() {
+        const list = document.getElementById("taskList");
+        list.innerHTML = "";
+        // Using for...of to loop through array values
+        for (let task of tasks) {
+          const li = document.createElement("li");
+          li.textContent = task;
+          list.appendChild(li);
+        }
+      }
+
+      function addTask() {
+        const input = document.getElementById("taskInput");
+        const newTask = input.value.trim();
+        if (newTask) {
+          // Using the Spread Operator to create a new array with the new task
+          tasks = [...tasks, newTask];
+          input.value = "";
+          renderTasks();
+        }
+      }
+
+      function findUrgent() {
+        // Using Array.find() to locate the first task containing "urgent"
+        const found = tasks.find((task) =>
+          task.toLowerCase().includes("urgent")
+        );
+        const msg = document.getElementById("message");
+        msg.textContent = found ? First : "${found}";
+        ("No urgent tasks found.");
+      }
+
+      // Display initial tasks
+      renderTasks();
+    </script>
+  </body>
+</html>
