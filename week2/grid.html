@@ -1,0 +1,41 @@
+<!--
+What CSS Grid Does
+
+While Flexbox works in one direction, CSS Grid works in two — both rows and columns.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid</title>
+    <style>
+      .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-gap: 10px;
+      }
+
+      .grid-container header {
+        grid-column: 1 / -1;
+        background: #555;
+        color: white;
+      }
+
+      .grid-container footer {
+        grid-column: 1 / -1;
+        background: #777;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <header>Header</header>
+      <aside>Sidebar</aside>
+      <main>Main content</main>
+      <footer>Footer</footer>
+    </div>
+  </body>
+</html>
