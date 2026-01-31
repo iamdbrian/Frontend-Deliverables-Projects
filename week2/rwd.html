@@ -1,0 +1,50 @@
+<!--
+What RWD Means
+
+Responsive Design makes a page look good on various screens without horizontal scrolling. This is done using:
+
+Flexible layouts
+
+Media queries
+
+Responsive images
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Web Design</title>
+  </head>
+  <style>
+    /* Base styles */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background: #333;
+      color: white;
+      padding: 1rem;
+    }
+
+    /* Media Query for Small Screens */
+    @media (max-width: 600px) {
+      .navbar {
+        text-align: center;
+        font-size: smaller;
+      }
+    }
+  </style>
+  <body>
+    <header class="navbar">
+  <h1>My Website</h1>
+</header>
+
+<section class="content">
+  <p>Welcome to my site!</p>
+</section>
+
+  </body>
+</html>
