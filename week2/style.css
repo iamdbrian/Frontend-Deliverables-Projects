@@ -1,0 +1,27 @@
+/* Flexbox navbar */
+.nav-flex {
+  display: flex;
+  justify-content: space-between;
+  background: #222;
+  padding: 1rem;
+  color: white;
+}
+
+/* Grid layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 15px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 700px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+}
