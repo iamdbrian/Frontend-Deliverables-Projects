@@ -1,0 +1,7 @@
+@function rem($px) {
+  @return ($px / 16) * 1rem;
+}
+
+@function space($key) {
+  @return map-get($spaces, $key);
+}

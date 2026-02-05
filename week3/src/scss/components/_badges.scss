@@ -1,0 +1,35 @@
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border: 1px solid var(--border);
+
+  &--info {
+    background: rgba(14, 165, 233, 0.12);
+  }
+
+  &--success {
+    background: rgba(22, 163, 74, 0.12);
+  }
+
+  &--warning {
+    background: rgba(245, 158, 11, 0.12);
+  }
+
+  &--danger {
+    background: rgba(239, 68, 68, 0.12);
+  }
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+
+  &--success { background: var(--success); }
+  &--warning { background: var(--warning); }
+  &--danger { background: var(--danger); }
+}

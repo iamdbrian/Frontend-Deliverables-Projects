@@ -1,0 +1,18 @@
+@use "tokens" as *;
+
+// Margin + Padding utilities using @each loop
+@each $key, $val in $spaces {
+  .m-#{$key} { margin: $val !important; }
+  .mt-#{$key} { margin-top: $val !important; }
+  .mb-#{$key} { margin-bottom: $val !important; }
+  .p-#{$key} { padding: $val !important; }
+  .pt-#{$key} { padding-top: $val !important; }
+  .pb-#{$key} { padding-bottom: $val !important; }
+}
+
+// Text alignment utilities
+.text-right { text-align: right !important; }
+.small { font-size: 0.875rem; }
+
+// Width utility
+.w-full { width: 100% !important; }

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaPanel — Users</title>
+  <link rel="stylesheet" href="dist/css/main.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="sidebar__brand">
+        <div class="logo">NP</div>
+        <div>
+          <p class="sidebar__title">NovaPanel</p>
+          <p class="sidebar__subtitle">Admin UI</p>
+        </div>
+      </div>
+
+      <nav class="sidebar__nav">
+        <a class="sidebar__link" href="index.html">Dashboard</a>
+        <a class="sidebar__link is-active" href="users.html">Users</a>
+        <a class="sidebar__link" href="settings.html">Settings</a>
+      </nav>
+
+      <div class="sidebar__footer">
+        <div class="user-mini">
+          <div class="avatar">B</div>
+          <div>
+            <p class="user-mini__name">Bruce</p>
+            <p class="user-mini__role">Frontend Developer</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1 class="h2">Users</h1>
+          <p class="muted">Manage users, roles, and account status.</p>
+        </div>
+
+        <div class="topbar__actions">
+          <button class="button button--ghost" id="themeToggle">Toggle Theme</button>
+          <button class="button button--primary">Add User</button>
+        </div>
+      </header>
+
+      <section class="card">
+        <div class="card__header">
+          <h2 class="h3">User Directory</h2>
+          <span class="pill pill--warning">Admin Tools</span>
+        </div>
+
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>User</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Status</th>
+                <th class="text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="user-row">
+                    <div class="avatar avatar--sm">A</div>
+                    <div>
+                      <p class="user-row__name">Amina Bello</p>
+                      <p class="muted small">Joined 2 weeks ago</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="muted">amina@novapanel.dev</td>
+                <td><span class="pill pill--info">Editor</span></td>
+                <td><span class="pill pill--success">Active</span></td>
+                <td class="text-right">
+                  <button class="button button--small button--ghost">View</button>
+                  <button class="button button--small button--danger">Suspend</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="user-row">
+                    <div class="avatar avatar--sm">J</div>
+                    <div>
+                      <p class="user-row__name">John Daniels</p>
+                      <p class="muted small">Joined 4 months ago</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="muted">john@novapanel.dev</td>
+                <td><span class="pill pill--warning">Support</span></td>
+                <td><span class="pill pill--success">Active</span></td>
+                <td class="text-right">
+                  <button class="button button--small button--ghost">View</button>
+                  <button class="button button--small button--danger">Suspend</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <div class="user-row">
+                    <div class="avatar avatar--sm">K</div>
+                    <div>
+                      <p class="user-row__name">Kelechi Udo</p>
+                      <p class="muted small">Joined 1 year ago</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="muted">kelechi@novapanel.dev</td>
+                <td><span class="pill pill--danger">Admin</span></td>
+                <td><span class="pill pill--warning">Review</span></td>
+                <td class="text-right">
+                  <button class="button button--small button--ghost">View</button>
+                  <button class="button button--small button--primary">Approve</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="alert alert--warning mt-4">
+          <strong>Note:</strong> This is a UI-only admin dashboard (no backend).
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p class="muted">NovaPanel UI — Users Management</p>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    const toggle = document.getElementById("themeToggle");
+    toggle.addEventListener("click", () => {
+      const html = document.documentElement;
+      const current = html.getAttribute("data-theme");
+      html.setAttribute("data-theme", current === "light" ? "dark" : "light");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+@use "../abstracts" as *;
+
+.app {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
+
+  @include respond(lg) {
+    grid-template-columns: 280px 1fr;
+  }
+}
+
+.main {
+  padding: 1rem;
+
+  @include respond(md) {
+    padding: 1.5rem;
+  }
+}

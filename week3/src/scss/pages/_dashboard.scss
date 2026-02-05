@@ -1,0 +1,45 @@
+.stat {
+  display: grid;
+  gap: 0.25rem;
+
+  &__label {
+    margin: 0;
+    color: var(--muted);
+    font-weight: 700;
+  }
+
+  &__value {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 900;
+  }
+
+  &__meta {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+}
+
+.success { color: var(--success); }
+.warning { color: var(--warning); }
+.danger { color: var(--danger); }
+
+.activity {
+  display: grid;
+  gap: 0.9rem;
+
+  &__item {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 800;
+  }
+
+  &__meta {
+    margin: 0.2rem 0 0;
+  }
+}

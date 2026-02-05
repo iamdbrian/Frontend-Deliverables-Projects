@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaPanel — Settings</title>
+  <link rel="stylesheet" href="dist/css/main.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="sidebar__brand">
+        <div class="logo">NP</div>
+        <div>
+          <p class="sidebar__title">NovaPanel</p>
+          <p class="sidebar__subtitle">Admin UI</p>
+        </div>
+      </div>
+
+      <nav class="sidebar__nav">
+        <a class="sidebar__link" href="index.html">Dashboard</a>
+        <a class="sidebar__link" href="users.html">Users</a>
+        <a class="sidebar__link is-active" href="settings.html">Settings</a>
+      </nav>
+
+      <div class="sidebar__footer">
+        <div class="user-mini">
+          <div class="avatar">B</div>
+          <div>
+            <p class="user-mini__name">Bruce</p>
+            <p class="user-mini__role">Frontend Developer</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1 class="h2">Settings</h1>
+          <p class="muted">Update profile, preferences, and theme.</p>
+        </div>
+
+        <div class="topbar__actions">
+          <button class="button button--ghost" id="themeToggle">Toggle Theme</button>
+          <button class="button button--primary">Save Changes</button>
+        </div>
+      </header>
+
+      <section class="grid grid--settings">
+        <article class="card">
+          <div class="card__header">
+            <h2 class="h3">Profile</h2>
+            <span class="pill pill--info">Account</span>
+          </div>
+
+          <form class="form">
+            <div class="form__group">
+              <label class="label">Full Name</label>
+              <input class="input" type="text" value="Bruce" />
+            </div>
+
+            <div class="form__group">
+              <label class="label">Email</label>
+              <input class="input" type="email" value="bruce@novapanel.dev" />
+            </div>
+
+            <div class="form__group">
+              <label class="label">Role</label>
+              <select class="select">
+                <option>Admin</option>
+                <option>Editor</option>
+                <option>Support</option>
+              </select>
+            </div>
+
+            <div class="form__group">
+              <label class="label">Bio</label>
+              <textarea class="textarea" rows="4" placeholder="Write a short bio..."></textarea>
+            </div>
+          </form>
+        </article>
+
+        <article class="card">
+          <div class="card__header">
+            <h2 class="h3">Preferences</h2>
+            <span class="pill pill--success">UI</span>
+          </div>
+
+          <div class="alert alert--success">
+            <strong>Theme:</strong> This dashboard supports light/dark mode using CSS variables.
+          </div>
+
+          <div class="mt-4">
+            <button class="button button--primary w-full">Enable Notifications</button>
+            <button class="button button--ghost w-full mt-2">Reset Settings</button>
+          </div>
+        </article>
+      </section>
+
+      <footer class="footer">
+        <p class="muted">NovaPanel UI — Settings</p>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    const toggle = document.getElementById("themeToggle");
+    toggle.addEventListener("click", () => {
+      const html = document.documentElement;
+      const current = html.getAttribute("data-theme");
+      html.setAttribute("data-theme", current === "light" ? "dark" : "light");
+    });
+  </script>
+</body>
+</html>

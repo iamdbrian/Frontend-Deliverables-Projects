@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NovaPanel — Dashboard</title>
+  <link rel="stylesheet" href="dist/css/main.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="sidebar__brand">
+        <div class="logo">NP</div>
+        <div>
+          <p class="sidebar__title">NovaPanel</p>
+          <p class="sidebar__subtitle">Admin UI</p>
+        </div>
+      </div>
+
+      <nav class="sidebar__nav">
+        <a class="sidebar__link is-active" href="index.html">Dashboard</a>
+        <a class="sidebar__link" href="users.html">Users</a>
+        <a class="sidebar__link" href="settings.html">Settings</a>
+      </nav>
+
+      <div class="sidebar__footer">
+        <div class="user-mini">
+          <div class="avatar">B</div>
+          <div>
+            <p class="user-mini__name">Bruce</p>
+            <p class="user-mini__role">Frontend Developer</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <h1 class="h2">Dashboard</h1>
+          <p class="muted">Track performance, users, and system health.</p>
+        </div>
+
+        <div class="topbar__actions">
+          <button class="button button--ghost" id="themeToggle">Toggle Theme</button>
+          <button class="button button--primary">New Report</button>
+        </div>
+      </header>
+
+      <section class="grid grid--stats">
+        <article class="card stat">
+          <p class="stat__label">Monthly Revenue</p>
+          <p class="stat__value">$24,980</p>
+          <p class="stat__meta success">+12.4% from last month</p>
+        </article>
+
+        <article class="card stat">
+          <p class="stat__label">Active Users</p>
+          <p class="stat__value">1,284</p>
+          <p class="stat__meta warning">Peak usage at 2PM</p>
+        </article>
+
+        <article class="card stat">
+          <p class="stat__label">System Uptime</p>
+          <p class="stat__value">99.98%</p>
+          <p class="stat__meta muted">Stable</p>
+        </article>
+
+        <article class="card stat">
+          <p class="stat__label">Tickets</p>
+          <p class="stat__value">34</p>
+          <p class="stat__meta danger">8 urgent</p>
+        </article>
+      </section>
+
+      <section class="grid grid--main">
+        <article class="card">
+          <div class="card__header">
+            <h2 class="h3">Weekly Activity</h2>
+            <span class="pill pill--info">UI Chart</span>
+          </div>
+
+          <div class="chart">
+            <div class="chart__bar" style="--h: 55%"></div>
+            <div class="chart__bar" style="--h: 70%"></div>
+            <div class="chart__bar" style="--h: 40%"></div>
+            <div class="chart__bar" style="--h: 85%"></div>
+            <div class="chart__bar" style="--h: 60%"></div>
+            <div class="chart__bar" style="--h: 90%"></div>
+            <div class="chart__bar" style="--h: 50%"></div>
+          </div>
+
+          <p class="muted mt-3">A lightweight chart component styled using design tokens and layout utilities.</p>
+        </article>
+
+        <article class="card">
+          <div class="card__header">
+            <h2 class="h3">Recent Events</h2>
+            <span class="pill pill--success">Live</span>
+          </div>
+
+          <div class="activity">
+            <div class="activity__item">
+              <span class="dot dot--success"></span>
+              <div>
+                <p class="activity__title">Payment received</p>
+                <p class="activity__meta muted">Invoice #NP-2041 · 2 mins ago</p>
+              </div>
+            </div>
+
+            <div class="activity__item">
+              <span class="dot dot--warning"></span>
+              <div>
+                <p class="activity__title">New user signup</p>
+                <p class="activity__meta muted">Plan: Pro · 18 mins ago</p>
+              </div>
+            </div>
+
+            <div class="activity__item">
+              <span class="dot dot--danger"></span>
+              <div>
+                <p class="activity__title">Failed login attempts</p>
+                <p class="activity__meta muted">IP flagged · 1 hour ago</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="alert alert--info mt-4">
+            <strong>Tip:</strong> Use Settings to switch theme and customize UI behavior.
+          </div>
+        </article>
+      </section>
+
+      <footer class="footer">
+        <p class="muted">NovaPanel UI — Built with Sass/SCSS Design System</p>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    const toggle = document.getElementById("themeToggle");
+    toggle.addEventListener("click", () => {
+      const html = document.documentElement;
+      const current = html.getAttribute("data-theme");
+      html.setAttribute("data-theme", current === "light" ? "dark" : "light");
+    });
+  </script>
+</body>
+</html>

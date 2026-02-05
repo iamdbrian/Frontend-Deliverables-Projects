@@ -1,0 +1,38 @@
+@use "../abstracts" as *;
+
+.button {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  padding: 0.7rem 1rem;
+  border-radius: 14px;
+  font-weight: 700;
+  cursor: pointer;
+
+  @extend %interactive;
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+
+  &--primary {
+    background: linear-gradient(135deg, var(--primary), var(--primary-2));
+    border-color: rgba(255,255,255,0.2);
+    color: white;
+  }
+
+  &--ghost {
+    background: transparent;
+  }
+
+  &--danger {
+    background: rgba(239, 68, 68, 0.12);
+    border-color: rgba(239, 68, 68, 0.25);
+  }
+
+  &--small {
+    padding: 0.45rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+  }
+}

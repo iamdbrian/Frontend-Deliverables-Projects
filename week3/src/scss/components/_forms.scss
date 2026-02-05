@@ -1,0 +1,31 @@
+@use "../abstracts" as *;
+
+.form {
+  display: grid;
+  gap: 1rem;
+
+  &__group {
+    display: grid;
+    gap: 0.5rem;
+  }
+}
+
+.label {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.input,
+.select,
+.textarea {
+  padding: 0.8rem 0.9rem;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
